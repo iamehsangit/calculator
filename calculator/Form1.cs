@@ -12,7 +12,7 @@ namespace calculator
 
         }
 
-        
+
         int number1;
         int number2;
         int total;
@@ -81,11 +81,23 @@ namespace calculator
         private void btnEqual_Click(object sender, EventArgs e)
         {
             number2 = Convert.ToInt32(txttotal.Text);
-            if(opt=="+")
+            if (opt == "+")
             {
-                total=number1 + number2;
+                total = number1 + number2;
             }
-            txttotal.Text=total.ToString();
+            if(opt == "-")
+            {
+                total = number1 - number2;
+            }
+            txttotal.Text = total.ToString();
+        }
+
+        private void btnMinus_Click(object sender, EventArgs e)
+        {
+            opt = "-";
+            number1 = Convert.ToInt32(txttotal.Text);
+            txttotal.Clear();
+
         }
     }
 }
